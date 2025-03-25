@@ -13,9 +13,15 @@ public class Address {
     }
 
     // Getter methods
-    public String getStreet() { return street; }
-    public String getCity() { return city; }
-    public String getPostalCode() { return postalCode; }
+    public String getStreet() {
+        return street;
+    }
+    public String getCity() {
+        return city;
+    }
+    public String getPostalCode() {
+        return postalCode;
+    }
 
     @Override
     public String toString() {
