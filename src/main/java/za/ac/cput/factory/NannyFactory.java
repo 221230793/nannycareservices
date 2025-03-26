@@ -7,7 +7,6 @@ public class NannyFactory {
 
         if(Helper.isNullOrEmpty(name) || Helper.isNullOrEmpty(availability)
                 ||Helper.isNullOrEmpty(phoneNumber))
-
             return null;
 
         return new Nanny.Builder()
@@ -24,7 +23,8 @@ public class NannyFactory {
                 ||Helper.isNullOrEmpty(phoneNumber))
             return null;
 
-        if (Helper.isNullOrEmpty(identification))
+
+        if (!Helper.isNullOrEmpty(identification))
             return null;
 
 
