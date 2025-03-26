@@ -1,5 +1,7 @@
 package za.ac.cput.util;
 
+import za.ac.cput.domain.Child;
+
 public class Helper {
     public static boolean isNullOrEmpty(String s) {
         if(s.isEmpty() || s == null)
@@ -11,4 +13,17 @@ public class Helper {
         throw  new UnsupportedOperationException();
         //check dateOfBirth and identification
     }
+
+    //---------------Child Methods-------------//
+
+    public static boolean isValidAge(int age) {
+        return age >0 && age < 18;
+    }
+    public static boolean hasMedicalInfo(String medicalInfo) {
+        return medicalInfo != null && !medicalInfo.trim().isEmpty();
+    }
+    public static boolean isValidChildId(String childId) {
+        return childId.matches("\\d{6,8}");}
 }
+
+
