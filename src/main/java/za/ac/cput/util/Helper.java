@@ -3,11 +3,14 @@ package za.ac.cput.util;
 import za.ac.cput.domain.Child;
 
 public class Helper {
+
+    //Nanny Methods
     public static boolean isNullOrEmpty(String s) {
         if(s.isEmpty() || s == null)
             return true;
         return false;
     }
+
     public static boolean isValidEmail(String email) {
         //TODO: Complete
         throw  new UnsupportedOperationException();
