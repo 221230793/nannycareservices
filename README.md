@@ -1,16 +1,15 @@
-Nanny Care Services System
+NannyCare Services
+Overview
+NannyCare Services is a childcare management system that connects nannies, parents, children, and drivers for seamless childcare services.
 
-Welcome to our Nanny Care Services System! It helps manage nannies, drivers, parents, children, and sessions. Here's a quick overview:
-
-System Overview
-
-
-Key Parts
-Person: Basic info like ID, name, phone, and email.
-Nanny: A type of Person with experience, availability, and hourly rate. They have an Address.
-Driver: A type of Person with vehicle details, availability, license, experience, and rating. They drive for Sessions.
-Parent: A type of Person with parent ID, relationship type, and emergency contact. They have Children and Contacts.
-Child: Info like child ID, age, and medical details.
-Address: Where people live, including street, number, postal code, suburb, and city.
-Session: Details like session ID, date, time, and status. Booked by Parents and driven by Drivers.
-Contact: Phone and email info.
+Entities
+Nanny: Provides childcare services, tracks experience, availability, and contact details.
+Child: Stores child profiles, including medical info and parent association.
+Parent: Manages bookings, child records, and communication with nannies.
+Driver: Handles child transportation with vehicle details and availability.
+Session: Represents scheduled nanny services, linking nannies, children, parents, and drivers.
+Features
+Manage nannies, children, parents, and drivers.
+Schedule and track nanny sessions.
+Parent dashboard for easy bookings.
+Driver coordination for child transport.
