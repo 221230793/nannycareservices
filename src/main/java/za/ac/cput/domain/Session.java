@@ -1,83 +1,107 @@
 package za.ac.cput.domain;
+import java.time.LocalDateTime;
+
 
 public class Session {
-        private String sessionId;
-        private String date;
-        private String time;
-        private String status;
-        private Parent parent;
-        private Driver driver;
+    private String sessionId;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
+    private String status;
+    private Parent parent;
+    private Nanny nanny;
+    private Child child;
+    private Driver driver;
 
-        // Constructor
-        public Session(String sessionId, String date, String time, String status, Parent parent, Driver driver) {
-            this.sessionId = sessionId;
-            this.date = date;
-            this.time = time;
-            this.status = status;
-            this.parent = parent;
-            this.driver = driver;
-        }
+    // Constructor
+    public Session(String sessionId, LocalDateTime startTime, LocalDateTime endTime, String status, Parent parent, Nanny nanny, Child child, Driver driver) {
+        this.sessionId = sessionId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.status = status;
+        this.parent = parent;
+        this.nanny = nanny;
+        this.child = child;
+        this.driver = driver;
+    }
 
-        // Getters and Setters
-        public String getSessionId() {
-            return sessionId;
-        }
+    // Getters and Setters
+    public String getSessionId() {
+        return sessionId;
+    }
 
-        public void setSessionId(String sessionId) {
-            this.sessionId = sessionId;
-        }
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
 
-        public String getDate() {
-            return date;
-        }
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
 
-        public void setDate(String date) {
-            this.date = date;
-        }
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
 
-        public String getTime() {
-            return time;
-        }
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
 
-        public void setTime(String time) {
-            this.time = time;
-        }
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
 
-        public String getStatus() {
-            return status;
-        }
+    public String getStatus() {
+        return status;
+    }
 
-        public void setStatus(String status) {
-            this.status = status;
-        }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-        public Parent getParent() {
-            return parent;
-        }
+    public Parent getParent() {
+        return parent;
+    }
 
-        public void setParent(Parent parent) {
-            this.parent = parent;
-        }
+    public void setParent(Parent parent) {
+        this.parent = parent;
+    }
 
-        public Driver getDriver() {
-            return driver;
-        }
+    public Nanny getNanny() {
+        return nanny;
+    }
 
-        public void setDriver(Driver driver) {
-            this.driver = driver;
-        }
+    public void setNanny(Nanny nanny) {
+        this.nanny = nanny;
+    }
 
-        // toString method
-        @Override
-        public String toString() {
-            return "Session{" +
-                    "sessionId='" + sessionId + '\'' +
-                    ", date='" + date + '\'' +
-                    ", time='" + time + '\'' +
-                    ", status='" + status + '\'' +
-                    ", parent=" + parent +
-                    ", driver=" + driver +
-                    '}';
-        }
+    public Child getChild() {
+        return child;
+    }
+
+    public void setChild(Child child) {
+        this.child = child;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Session{" +
+                "sessionId='" + sessionId + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", status='" + status + '\'' +
+                ", parent=" + parent +
+                ", nanny=" + nanny +
+                ", child=" + child +
+                ", driver=" + driver +
+                '}';
+    }
     }
 
