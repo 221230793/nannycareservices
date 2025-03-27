@@ -1,5 +1,7 @@
 package za.ac.cput.domain;
 
+//Author: Nakedi Puleng Veronica (222914556)
+//Date 16/03/2025
 public class Nanny extends Person {
 
     private int yearsOfExperience;
