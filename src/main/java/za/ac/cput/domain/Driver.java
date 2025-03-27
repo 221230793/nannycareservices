@@ -65,18 +65,21 @@ public class Driver extends Person {
             return this;
         }
 
-        public String setVehicleDetails() {
-            return vehicleDetails;
+        public Builder setVehicleDetails(String vehicleDetails) {
+            this.vehicleDetails = vehicleDetails;
+            return this;
         }
 
-        public String setAvailability() {
-            return availability;
+        public Builder setAvailability(String availability ) {
+            this.availability = availability;
+            return this;
         }
 
         public Builder setLicenseNumber(String licenseNumber) {
             this.licenseNumber = licenseNumber;
             return this;
         }
+
     }
 
     public Driver build() {
