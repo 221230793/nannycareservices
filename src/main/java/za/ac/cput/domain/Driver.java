@@ -80,7 +80,7 @@ public class Driver extends Person {
     }
 
     public Driver build() {
-        return new Driver(this);
+        return new Driver();
     }
 }
 
