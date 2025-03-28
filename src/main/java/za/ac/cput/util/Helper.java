@@ -2,6 +2,9 @@ package za.ac.cput.util;
 
 import za.ac.cput.domain.Nanny;
 import za.ac.cput.domain.Parent;
+import za.ac.cput.domain.Session;
+
+import java.time.LocalDateTime;
 
 import static za.ac.cput.factory.ChildFactory.random;
 
@@ -68,6 +71,60 @@ public class Helper {
                    !isNullOrEmpty(parent.getPhoneNumber()) &&
                    isValidPhoneNumber(parent.getPhoneNumber());
        }
+
+    //----------Session Methods ---------//
+    //Author: [Siganeko Ninzi] (222522569)
+    //Date [28 March 2025]
+
+    public static boolean isValidSession(Session session) {
+        if (session == null) return false;
+
+        if (isNullOrEmpty(session.getSessionId()) ||
+                session.getStartTime() == null ||
+                session.getEndTime() == null ||
+                isNullOrEmpty(session.getStatus())) {
+            return false;
+        }
+
+        // Check if start time is before end time
+        if (!session.getStartTime().isBefore(session.getEndTime())) {
+            return false;
+        }
+
+        // Check if related objects are valid
+        if (!isValidParent(session.getParent()) ||
+                !isValidNanny(session.getNanny()) ||
+                session.getChild() == null || // Assuming Child doesn't have a specific validation method
+                session.getDriver() == null) { // Assuming Driver doesn't have a specific validation method
+            return false;
+        }
+
+        return true;
+    }
+
+    public static String generateSessionId() {
+        // Example: Generate a random session ID
+        return "S" + (100000 + random.nextInt(900000));
+    }
+
+    public static boolean isValidStatus(String status) {
+        // Define valid statuses here
+        String[] validStatuses = {"Active", "Inactive", "Completed", "Cancelled"};
+        for (String validStatus : validStatuses) {
+            if (validStatus.equalsIgnoreCase(status)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isSessionActive(Session session) {
+        if (session == null) return false;
+        LocalDateTime now = LocalDateTime.now();
+        return "Active".equalsIgnoreCase(session.getStatus()) &&
+                session.getStartTime().isBefore(now) &&
+                (session.getEndTime() == null || session.getEndTime().isAfter(now));
+    }
 
 
     }
