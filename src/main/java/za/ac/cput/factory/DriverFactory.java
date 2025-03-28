@@ -6,8 +6,7 @@ import za.ac.cput.util.Helper;
 public class DriverFactory {
 
 
-        public static Driver createDriver(String name, String identification, String email,
-                                          String vehicleDetails, String availability, String licenseNumber) {
+        public static Driver createDriver(String name, String identification, String email) {
 
             if (Helper.isNullOrEmpty(name) || Helper.isNullOrEmpty(identification) ||
                     Helper.isNullOrEmpty(email) || Helper.isNullOrEmpty(vehicleDetails) ||
