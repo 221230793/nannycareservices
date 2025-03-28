@@ -9,7 +9,6 @@ public class NannyFactory {
         if (Helper.isNullOrEmpty(name) || Helper.isNullOrEmpty(phoneNumber) || Helper.isNullOrEmpty(availability)) {
             return null;
         }
-
         return new Nanny.Builder()
                 .setName(name)
                 .setPhoneNumber(phoneNumber)
