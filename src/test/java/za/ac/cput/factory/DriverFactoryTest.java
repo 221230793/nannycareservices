@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
     class DriverFactoryTest {
 
-        public static Driver driver1 = DriverFactory.createDriver("Ayanda","0211140288088","nosiphiwomshwe2@gmail.com");
-        public static Driver driver2 = DriverFactory.createDriver("Phila","0213151238088","Sandeme6@gmail");
-        public static Driver driver3 = DriverFactory.createDriver("Sivuyise" ,"6212140178018","nosiphiwomshwe2@gmail");
+        public static Driver driver1 = DriverFactory.createDriver( "Ayanda","0211140288088","nosiphiwomshwe2@gmail.com","Mercedes","unavailable","DR123456");
+        public static Driver driver2 = DriverFactory.createDriver("Phila","0213151238088","Sandeme6@gmail","Corolla","available","DR654321");
+        public static Driver driver3 = DriverFactory.createDriver("Sivuyise" ,"6212140178018","nosiphiwomshwe2@gmail","Range Rover","available","DR654321");
 
         @Test
         @Order(1)
