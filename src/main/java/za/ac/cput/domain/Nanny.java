@@ -8,6 +8,8 @@ public class Nanny extends Person {
     private String availability;
     private double hourlyRate;
 
+    private Address address;
+
     private Nanny() {
     }
 
