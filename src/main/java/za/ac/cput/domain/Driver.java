@@ -79,11 +79,11 @@ public class Driver extends Person {
             this.licenseNumber = licenseNumber;
             return this;
         }
-
+        public Driver build() {
+            return new Driver(this);
+        }
     }
 
-    public Driver build() {
-        return new Driver();
-    }
+
 }
 

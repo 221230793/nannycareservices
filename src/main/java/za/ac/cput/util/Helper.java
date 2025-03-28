@@ -1,6 +1,8 @@
 package za.ac.cput.util;
 
 import za.ac.cput.domain.Nanny;
+import za.ac.cput.domain.Driver;
+
    public class Helper {
 
        //----------Nanny Methods ---------//
@@ -26,7 +28,7 @@ import za.ac.cput.domain.Nanny;
             return true;
         }
 
-        private static boolean isNullOrEmpty(String value) {
+        public static boolean isNullOrEmpty(String value) {
             return value == null || value.trim().isEmpty();
         }
 
@@ -48,6 +50,41 @@ import za.ac.cput.domain.Nanny;
 
         public static boolean isValidChildId(String childId) {
             return childId.matches("\\d{6,8}");}
+       //---------------Driver Methods-------------//
+       public static boolean isValidDriver(Driver driver) {
+           if (driver == null) return false;
+
+           if (isNullOrEmpty(driver.getName()) ||
+                   isNullOrEmpty(driver.getIdentification()) ||
+                   isNullOrEmpty(driver.getEmail()) ||
+                   isNullOrEmpty(driver.getVehicleDetails()) ||
+                   isNullOrEmpty(driver.getAvailability()) ||
+                   isNullOrEmpty(driver.getLicenseNumber())) {
+               return false;
+           }
+
+           if (!isValidEmail(driver.getEmail()) ||
+                   !isValidLicenseNumber(driver.getLicenseNumber()) ||
+                   !isValidAvailability(driver.getAvailability())) {
+               return false;
+           }
+
+           return true;
+       }
+
+       public static boolean isValidLicenseNumber(String licenseNumber) {
+           // Simple validation to check if the license number contains only letters, numbers, and dashes
+           return licenseNumber != null && licenseNumber.matches("[A-Z0-9-]+");
+       }
+
+       public static boolean isValidEmail(String email) {
+           // Basic email validation regex
+           return email != null && email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+       }
+
+       public static boolean isValidAvailability(String availability) {
+           return "Available".equalsIgnoreCase(availability) || "Unavailable".equalsIgnoreCase(availability);
+       }
     }
 
 
