@@ -6,6 +6,7 @@ public class Parent extends Person {
     private String emergencyContact;
 
     private Parent(Builder builder) {
+        super(builder.name, builder.identification,builder.email,builder.phoneNumber);
         this.name = builder.name;
         this.identification = builder.identification;
         this.email = builder.email;
