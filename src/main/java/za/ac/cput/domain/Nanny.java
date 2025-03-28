@@ -10,18 +10,31 @@ public class Nanny extends Person {
 
     private Address address;
 
-    private Nanny() {
-    }
-
-    public Nanny(Builder builder) {
-        this.name = builder.name;
-        this.identification = builder.identification;
-        this.email = builder.email;
-        this.phoneNumber = builder.phoneNumber;
+    //constructor
+    private Nanny(Builder builder) {
+        super(builder.name, builder.identification,builder.email,builder.phoneNumber);
         this.yearsOfExperience = builder.yearsOfExperience;
         this.availability = builder.availability;
         this.hourlyRate = builder.hourlyRate;
+        this.address = builder.address;
     }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Nanny{" +
+                "yearsOfExperience=" + yearsOfExperience +
+                ", availability='" + availability + '\'' +
+                ", hourlyRate=" + hourlyRate +
+                ", address=" + address +
+                ", name='" + name + '\'' +
+                ", identification='" + identification + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+
+    }
+//getters
 
     public int getYearsOfExperience() {
         return yearsOfExperience;
@@ -35,18 +48,11 @@ public class Nanny extends Person {
         return hourlyRate;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", identification='" + identification + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", yearsOfExperience=" + yearsOfExperience +
-                ", availability='" + availability + '\'' +
-                ", hourlyRate=" + hourlyRate +
-                '}';
+    public Address getAddress() {
+        return address;
     }
+
+
 
     public static class Builder {
         private String name;
@@ -56,6 +62,7 @@ public class Nanny extends Person {
         private int yearsOfExperience;
         private String availability;
         private double hourlyRate;
+        private Address address;
 
         public Builder setName(String name) {
             this.name = name;
@@ -92,9 +99,24 @@ public class Nanny extends Person {
             return this;
         }
 
+        public Builder setAddress(Address address) {
+            this.address = address;
+            return this;
+        }
 
+        public Builder copy(Nanny nanny) {
+            this.yearsOfExperience = nanny.yearsOfExperience;
+            this.availability = nanny.availability;
+            this.hourlyRate = nanny.hourlyRate;
+            this.address = nanny.address;
+            this.name = nanny.name;
+            this.identification = nanny.identification;
+            this.email = nanny.email;
+            this.phoneNumber = nanny.phoneNumber;
+            return this;
+
+        }
         public Nanny build() {
-
             return new Nanny(this);
         }
     }

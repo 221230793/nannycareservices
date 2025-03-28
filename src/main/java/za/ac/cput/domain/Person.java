@@ -6,6 +6,13 @@ public abstract class Person {
     protected String email;
     protected String phoneNumber;
 
+    public Person(String name, String identification, String email, String phoneNumber) {
+        this.name = name;
+        this.identification = identification;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getName() {
         return name;
     }
@@ -24,4 +31,6 @@ public abstract class Person {
 
     @Override
     public abstract String toString();
+
+
 }
